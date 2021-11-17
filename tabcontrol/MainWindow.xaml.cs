@@ -12,17 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System;
+using System.IO;
+using System.Windows;
+using Microsoft.Win32;
 
-namespace tabcontrol
+namespace WpfTutorialSamples.Dialogs
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-           // InitializeComponent();
-        }
-    }
+	public partial class OpenFileDialogSample : Window
+	{
+		public OpenFileDialogSample()
+		{
+			InitializeComponent();
+		}
+
+		private void btnOpenFile_Click(object sender, RoutedEventArgs e)
+		{
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+			openFileDialog.Filter = "Image files (*.png;*.jpeg; *jpg; *)|*.png;*.jpeg;*.jpg|All files (*.*)|*.*";
+			if (openFileDialog.ShowDialog() == true)
+				picturebox1.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+				//txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+		}
+	}
 }
