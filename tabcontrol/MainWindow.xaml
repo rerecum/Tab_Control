@@ -1,0 +1,12 @@
+﻿<Window x:Class="WpfTutorialSamples.Misc_controls.TabControlSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TabControlSample" Height="250" Width="500">
+    <Grid Margin="232,134,0,0">
+        <TabControl Margin="-229,-130,0,0">
+            <TabItem Header="Wczytaj">
+            </TabItem>
+        </TabControl>
+        <Button Content="Wczytaj obraz" Margin="-214,64,388,16" RenderTransformOrigin="-0.078,3.894"/>
+    </Grid>
+</Window>
