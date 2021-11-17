@@ -31,8 +31,20 @@ namespace WpfTutorialSamples.Dialogs
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			openFileDialog.Filter = "Image files (*.png;*.jpeg; *jpg; *)|*.png;*.jpeg;*.jpg|All files (*.*)|*.*";
 			if (openFileDialog.ShowDialog() == true)
-				picturebox1.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-				//txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+			{
+				TabItem ti = new TabItem();
+				ti.Header = openFileDialog.FileName;
+				Image img = new Image();
+				img.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+				ti.Content = img;
+				zakladki.Items.Add(ti);
+				zakladki.SelectedItem = zakladki.Items[zakladki.Items.Count - 1];
+			}
 		}
-	}
+
+        private void btnCloseFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }

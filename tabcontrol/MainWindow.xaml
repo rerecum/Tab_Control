@@ -5,11 +5,10 @@
     <DockPanel Margin="10">
         <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
             <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
+            <Button Name="btnCloseFile" Click="btnCloseFile_Click">Close file</Button>
         </WrapPanel>
-        <TextBox Name="txtEditor" />
-        <TabControl>
+        <TabControl Name="zakladki">
             <TabItem Header="Wczytaj"/>
         </TabControl>
-        <Image x:Name="picturebox1" Width="200" Cursor="None"/>
     </DockPanel>
 </Window>
