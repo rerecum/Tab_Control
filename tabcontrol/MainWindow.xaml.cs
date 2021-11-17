@@ -16,6 +16,7 @@ using System;
 using System.IO;
 using System.Windows;
 using Microsoft.Win32;
+using System.Drawing;
 
 namespace WpfTutorialSamples.Dialogs
 {
@@ -41,10 +42,13 @@ namespace WpfTutorialSamples.Dialogs
 				zakladki.SelectedItem = zakladki.Items[zakladki.Items.Count - 1];
 			}
 		}
+//		public System.Windows.Controls.TabControl TabPages { get; }
 
         private void btnCloseFile_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+		{
+			//zakladki.TabPages.Remove(zakladki.SelectedTab);
+			TabItem ti = zakladki.SelectedItem;
+			zakladki.Items.Remove(ti);
+		}
     }
 }
